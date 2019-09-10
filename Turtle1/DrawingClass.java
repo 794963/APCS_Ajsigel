@@ -31,7 +31,7 @@ public class DrawingClass
     t.penSize(5);
     size = 300;
     turn = 93;
-    t.penColor(Color.red);
+    t.penColor(Color.blue);
     for (int i = 0; i < 120; i++){
      t.move(size);
      t.turn(turn);
@@ -42,7 +42,7 @@ public class DrawingClass
     t.penSize(5);
     size = 200;
     turn = 93;
-    t.penColor(Color.blue);
+    t.penColor(Color.red);
     for (int i = 0; i < 120; i++){
      t.move(size);
      t.turn(turn);

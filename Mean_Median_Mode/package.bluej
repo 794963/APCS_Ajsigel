@@ -2,31 +2,18 @@
 dependency1.from=MMMrunner
 dependency1.to=MMM
 dependency1.type=UsesDependency
-<<<<<<< HEAD
-editor.fx.0.height=738
-editor.fx.0.width=1101
-editor.fx.0.x=552
-editor.fx.0.y=141
-objectbench.height=93
+editor.fx.0.height=0
+editor.fx.0.width=0
+editor.fx.0.x=0
+editor.fx.0.y=0
+objectbench.height=119
 objectbench.width=760
 package.divider.horizontal=0.6
-package.divider.vertical=0.8003992015968064
-package.editor.height=394
+package.divider.vertical=0.7485029940119761
+package.editor.height=368
 package.editor.width=670
-=======
-editor.fx.0.height=736
-editor.fx.0.width=813
-editor.fx.0.x=690
-editor.fx.0.y=152
-objectbench.height=94
-objectbench.width=762
-package.divider.horizontal=0.6
-package.divider.vertical=0.7994318181818182
-package.editor.height=396
-package.editor.width=674
->>>>>>> 0e222e61f75830f120d864815a026c086f9b28f5
-package.editor.x=40
-package.editor.y=40
+package.editor.x=879
+package.editor.y=292
 package.frame.height=600
 package.frame.width=800
 package.numDependencies=1
@@ -44,21 +31,12 @@ target1.name=MMMrunner
 target1.showInterface=false
 target1.type=ClassTarget
 target1.width=100
-<<<<<<< HEAD
-target1.x=160
-=======
 target1.x=90
->>>>>>> 0e222e61f75830f120d864815a026c086f9b28f5
 target1.y=10
 target2.height=50
 target2.name=MMM
 target2.showInterface=false
 target2.type=ClassTarget
 target2.width=80
-<<<<<<< HEAD
-target2.x=70
-target2.y=10
-=======
 target2.x=250
 target2.y=160
->>>>>>> 0e222e61f75830f120d864815a026c086f9b28f5

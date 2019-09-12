@@ -13,4 +13,6 @@ comment5.params=
 comment5.target=double\ getMean()
 comment6.params=
 comment6.target=double\ getMedian()
-numComments=7
+comment7.params=
+comment7.target=void\ getMode()
+numComments=8

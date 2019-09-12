@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.target=BreadCrumb
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ BreadCrumb\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=name\ pos
+comment1.target=BreadCrumb(java.lang.String,\ int)
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ BreadCrumb\r\n
+comment2.params=
+comment2.target=int\ getBCPos()
+comment3.params=
+comment3.target=java.lang.String\ getBCName()
+numComments=4

@@ -34,6 +34,7 @@ public class DigitArray
     }
 
     public void loadArray(){
+        i=1;
         while (num > 0){
             
             digits[i]=num%10;

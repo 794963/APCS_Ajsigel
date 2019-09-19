@@ -18,7 +18,7 @@ public class MazeWalker
     } // initialise instance variables
         
     public static void run(){
-        Maze maze = new Maze(2);
+        Maze maze = new Maze(3);
         MazeWalker mazeWalker = new MazeWalker();
         mazeWalker.walkMaze(maze, maze.getMazeBot());
     }

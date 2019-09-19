@@ -2,7 +2,7 @@
 comment0.target=CanvasComponent
 comment1.params=width\ height
 comment1.target=CanvasComponent(int,\ int)
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ CanvasComponent\n
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ CanvasComponent\r\n
 comment2.params=graphicsContext
 comment2.target=void\ paintComponent(java.awt.Graphics)
 comment3.params=drawableShape

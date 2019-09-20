@@ -2,7 +2,7 @@
 comment0.target=DrawableShape
 comment1.params=shape\ strokeWidth\ strokeColor
 comment1.target=DrawableShape(java.awt.Shape,\ int,\ java.awt.Color)
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ DrawableShape\n
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ DrawableShape\r\n
 comment2.params=shape\ fillColor
 comment2.target=DrawableShape(java.awt.Shape,\ java.awt.Color)
 comment3.params=

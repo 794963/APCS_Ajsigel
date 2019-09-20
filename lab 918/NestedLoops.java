@@ -90,5 +90,16 @@ public class NestedLoops
         System.out.println();
         }
     }
+    public static void probG(){
     
+    }
+    public static void line(){
+    System.out.print("+ - - - - - - - - +");
+    }
+    public static void topDiamond(){
+    System.out.println("|        +        |");
+    //System.out.println("|       /+\       |");
+    System.out.println("|      //+\\      |");
+    
+    }
 }

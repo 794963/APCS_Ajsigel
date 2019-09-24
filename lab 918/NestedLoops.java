@@ -91,15 +91,72 @@ public class NestedLoops
         }
     }
     public static void probG(){
-    
+    line();
+    topDiamond();
+    lowDiamond();
+    line();
+    lowDiamond();
+    topDiamond();
+    line();
     }
     public static void line(){
-    System.out.print("+ - - - - - - - - +");
+    for(int i=0;i<10;i++){
+        if( i == 0 || i== 9){
+            System.out.print("+ ");
+        }else{
+        System.out.print("- ");
+        }
+    }
+    System.out.println();
     }
     public static void topDiamond(){
-    System.out.println("|        +        |");
-    //System.out.println("|       /+\       |");
-    System.out.println("|      //+\\      |");
-    
+        int x = 0;
+        int middle1 = 0;
+        int middle2 = 0;
+    for(int i=0;i<4;i++){
+        System.out.print("|");
+        for(int j=0;j< Math.abs(8-i);j++){
+        System.out.print(" ");
+        }
+        for(int h=0;h<x;h++){ 
+        System.out.print("/");
+        }
+        System.out.print("+");
+        for(int h=0;h<x;h++){ 
+        System.out.print("\\");
+        }
+        for(int k=0;k< Math.abs(8-i);k++){
+        System.out.print(" ");
+        }
+        System.out.print("|");
+        x+=1;
+
+        System.out.println();
+        }
+    }
+    public static void lowDiamond(){
+        int x = 3;
+        int middle1 = 0;
+        int middle2 = 0;
+    for(int i=0;i<4;i++){
+        System.out.print("|");
+        for(int j=0;j< Math.abs(5+i);j++){
+        System.out.print(" ");
+        }
+        for(int h=0;h<x;h++){ 
+        System.out.print("\\");
+        }
+        System.out.print("+");
+        for(int h=0;h<x;h++){ 
+        System.out.print("/");
+        }
+        for(int k=0;k< Math.abs(5+i);k++){
+        System.out.print(" ");
+        }
+        System.out.print("|");
+        x-=1;
+
+        System.out.println();
+        }
     }
 }

@@ -19,8 +19,9 @@ public class Person
     public Person(String x)
     {
         // initialise instance variables
-        parseName(x);
         str = x;
+        parseName(x);
+        
     }
     public void parseName(String s){
         
@@ -52,11 +53,13 @@ public class Person
     public void printName(){
         if(!fName.equals("")){
         System.out.print(fName + " ");
+        //if(mName!=""){
         System.out.print(mName + " ");
+    //}
         System.out.print(lName+", ");
         }
         else{
-            System.out.println("Your name is incorrectly formatted");
+            System.out.println("Your name is incorrectly formatted, ");
         }
     }
 }

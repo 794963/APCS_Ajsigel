@@ -7,17 +7,17 @@
  */
 import java.util.Scanner;
 public class ScannerTest{
-    static Object[] person;
-    
-    public static void main(String[] args){
+    // static Person[] Person;
+    static int y = 0;
+    public static void main(){
         Scanner kb = new Scanner(System.in);
         String inputStr = "";
-        person = new Object[2];
-        Person w = new Person("Jaan A Sigel");
-        person[0] = w;
+       Person[] Person = new Person[1];
+    
        
         
-        int x=1;
+        int x=0;
+        
 
         //  if(str1 == str2)
         while(!inputStr.equals("quit")){
@@ -27,37 +27,33 @@ public class ScannerTest{
             if(inputStr.lastIndexOf(" ") == (inputStr.length()-1)){
             inputStr = inputStr.substring(0,inputStr.length()-1);
             }
-            Person p = new Person(inputStr);
+            Person p1 = new Person(inputStr);
             
-            person[x] = p;
-            extendArray(person,1);
+            Person[x] = p1;
+            printNames(Person);
+            Person = extendArray(Person,1);
             
-        
+            
+            x++;
       
     }
     }
     
-    public static Object[] extendArray(Object[] p, int n){
-        Object person[];
-        person = new Object[p.length+n];
+    public static Person[] extendArray(Person[] p, int n){
+        
+        Person[] p2 = new Person[p.length+n];
         for(int i = 0; i < p.length;i++){
-        person[i] = p[i];
+        p2[i] = p[i];
     }
-        return person;
+    y++;
+        return p2;
     }
-    // public static void printNames(Object[] p){
-        
-        // for(int i = 0; i < person.length;i++){
-        
-        // System.out.print(p[i].fName);
-        // System.out.print(" ");
-        // if(!p[i].mName.equals("")){
-        // System.out.print(p[i].mName);
-        // System.out.print(" ");
-    // }
-        // System.out.print(p[i].lName);
-        // System.out.print(", ");
-    // }
-    // }
+     public static void printNames(Person[] p){
+         for(int i = 0; i < p.length;i++){
+             p[i].printName();
+             
+    }
+    System.out.println();
+    }
 
 }

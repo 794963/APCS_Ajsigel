@@ -51,9 +51,9 @@ public class Person
     }     
     public void printName(){
         if(!fName.equals("")){
-        System.out.println(fName);
-        System.out.println(mName);
-        System.out.println(lName);
+        System.out.print(fName + " ");
+        System.out.print(mName + " ");
+        System.out.print(lName+", ");
         }
         else{
             System.out.println("Your name is incorrectly formatted");

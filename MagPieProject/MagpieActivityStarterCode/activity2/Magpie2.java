@@ -28,9 +28,13 @@ public class Magpie2
 	 *            the user statement
 	 * @return a response based on the rules given
 	 */
-	public String getResponse(String statement)
+	public String getResponse(String statements)
 	{
 		String response = "";
+		String statement = statements.trim();
+		//put the higher priority ones first
+		//whatever response is first and takes priority
+		//the random responses make no l;ogical sense
 		if (statement.indexOf("no") >= 0)
 		{
 			response = "Why so negative?";
@@ -42,6 +46,30 @@ public class Magpie2
 		{
 			response = "Tell me more about your family.";
 		}
+		else if(statement.indexOf("dog") >= 0 
+		|| statement.indexOf("cat") >= 0){
+		  response = "Tell me more about your pets.";
+		  }
+		  else if(statement.indexOf("Mr.") >= 0){
+		  response = "He sounds like a good teacher. ";
+		  }
+		  else if(statement.indexOf("Mrs.") >= 0){
+		  response = "She sounds like a good teacher. ";
+		  }
+		  else if(statement.length() == 0){
+		  response = "Say something, please.";
+		  }
+		  else if(statement.indexOf("weather") >= 0 
+		  && statement.indexOf("warm") >= 0){
+		  response = "It sounds like a good day. ";
+		  }
+		  else if(statement.indexOf("weather") >= 0 
+		  && statement.indexOf("cold") >= 0){
+		  response = "Be sure to bring a jacket when you go out. ";
+		  }
+		  else if(statement.indexOf("stressed") >= 0){
+		  response = "Why so serious? ";
+		  }
 		else
 		{
 			response = getRandomResponse();
@@ -55,7 +83,7 @@ public class Magpie2
 	 */
 	private String getRandomResponse()
 	{
-		final int NUMBER_OF_RESPONSES = 4;
+		final int NUMBER_OF_RESPONSES = 6;
 		double r = Math.random();
 		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
 		String response = "";
@@ -75,6 +103,14 @@ public class Magpie2
 		else if (whichResponse == 3)
 		{
 			response = "You don't say.";
+		}
+		else if (whichResponse == 4)
+		{
+			response = "Are you sure about that?";
+		}
+		else if (whichResponse == 5)
+		{
+			response = "That's facsinating.";
 		}
 
 		return response;

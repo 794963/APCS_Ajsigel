@@ -30,21 +30,45 @@ public class Magpie3
 	public String getResponse(String statement)
 	{
 		String response = "";
-		if (statement.length() == 0)
-		{
-			response = "Say something, please.";
-		}
-		else if (findKeyword(statement, "no") >= 0)
+		
+		//put the higher priority ones first
+		//whatever response is first and takes priority
+		//the random responses make no l;ogical sense
+		if (findKeyword(statement, "no",0)>-1)
 		{
 			response = "Why so negative?";
 		}
-		else if (findKeyword(statement, "mother") >= 0
-				|| findKeyword(statement, "father") >= 0
-				|| findKeyword(statement, "sister") >= 0
-				|| findKeyword(statement, "brother") >= 0)
+		else if (findKeyword(statement, "mother",0)>-1
+				|| findKeyword(statement, "father",0)>-1
+				|| findKeyword(statement, "sister",0)>-1
+				|| findKeyword(statement, "brother",0)>-1)
 		{
 			response = "Tell me more about your family.";
 		}
+		else if(findKeyword(statement, "dog",0)>-1 
+		|| findKeyword(statement, "cat",0)>-1){
+		  response = "Tell me more about your pets.";
+		  }
+		  else if(findKeyword(statement, "Mr.",0)>-1){
+		  response = "He sounds like a good teacher. ";
+		  }
+		  else if(findKeyword(statement, "Mrs.",0)>-1){
+		  response = "She sounds like a good teacher. ";
+		  }
+		  else if(statement.length() == 0){
+		  response = "Say something, please.";
+		  }
+		  else if(findKeyword(statement, "weather",0)>-1 
+		  && findKeyword(statement, "warm",0)>-1){
+		  response = "It sounds like a good day. ";
+		  }
+		  else if(findKeyword(statement, "weather",0)>-1
+		  && findKeyword(statement, "cold",0)>-1){
+		  response = "Be sure to bring a jacket when you go out. ";
+		  }
+		  else if(findKeyword(statement, "stressed",0)>-1){
+		  response = "Why so serious? ";
+		  }
 		else
 		{
 			response = getRandomResponse();
@@ -142,11 +166,11 @@ public class Magpie3
 	 */
 	private String getRandomResponse()
 	{
-		final int NUMBER_OF_RESPONSES = 4;
+		final int NUMBER_OF_RESPONSES = 6;
 		double r = Math.random();
-		int whichResponse = (int) (r * NUMBER_OF_RESPONSES);
+		int whichResponse = (int)(r * NUMBER_OF_RESPONSES);
 		String response = "";
-
+		
 		if (whichResponse == 0)
 		{
 			response = "Interesting, tell me more.";
@@ -162,6 +186,14 @@ public class Magpie3
 		else if (whichResponse == 3)
 		{
 			response = "You don't say.";
+		}
+		else if (whichResponse == 4)
+		{
+			response = "Are you sure about that?";
+		}
+		else if (whichResponse == 5)
+		{
+			response = "That's facsinating.";
 		}
 
 		return response;

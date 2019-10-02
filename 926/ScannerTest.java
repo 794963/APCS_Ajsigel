@@ -7,15 +7,13 @@
  */
 import java.util.Scanner;
 public class ScannerTest{
-    // static Person[] Person;
-    static int y = 0;
+    //static Person[] Person;
+    
     public static void main(){
         Scanner kb = new Scanner(System.in);
         String inputStr = "";
        Person[] Person = new Person[1];
-    
-       
-        
+   
         int x=0;
         
 
@@ -24,15 +22,15 @@ public class ScannerTest{
             System.out.println("Enter a name or type \"quit\" to quit");
             inputStr = kb.nextLine();
             System.out.println(inputStr);
-            if(inputStr.lastIndexOf(" ") == (inputStr.length()-1)){
-            inputStr = inputStr.substring(0,inputStr.length()-1);
-            }
+            
+            inputStr = inputStr.trim();
+            if(!inputStr.equals("quit")){
             Person p1 = new Person(inputStr);
             
             Person[x] = p1;
             printNames(Person);
             Person = extendArray(Person,1);
-            
+        }
             
             x++;
       
@@ -45,7 +43,7 @@ public class ScannerTest{
         for(int i = 0; i < p.length;i++){
         p2[i] = p[i];
     }
-    y++;
+    
         return p2;
     }
      public static void printNames(Person[] p){

@@ -79,10 +79,15 @@ public class Magpie4
         return response;
     }
     
-    
+    /**
+     * Take a statement with "I want to <something>." and transform it into 
+     * "What would it mean to <something>?"
+     * @param statement the user statement, assumed to contain "I want to"
+     * @return the transformed statement
+	 */
 	private String transformIWantToStatement(String statement)
 	{
-		
+		//  Remove the final period, if there is one
 		statement = statement.trim();
 		String lastChar = statement.substring(statement
 				.length() - 1);
@@ -133,7 +138,7 @@ public class Magpie4
 			statement = statement.substring(0, statement
 					.length() - 1);
 		}
-		//doesn't work great when about an event or something like i got a present for you
+		
 		int psnOfI = findKeyword (statement, "i", 0);
 		int psnOfYou = findKeyword (statement, "you", psnOfI+2);
 		

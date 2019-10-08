@@ -33,11 +33,13 @@ public class Person
 
         if(s.indexOf(",")>-1 && s.indexOf(" ")>-1){
             lName = s.substring(0,s.indexOf(","));
-            fName = s.substring(s.indexOf(" ")+1,s.lastIndexOf(" "));
+            
             if(count != 2){
                 mName = "";
+                fName = s.substring(s.indexOf(" ")+1);
             }else{
               mName = s.substring(s.lastIndexOf(" ")+1);
+              fName = s.substring(s.indexOf(" ")+1,s.lastIndexOf(" "));
             }
         }else if(s.indexOf(" ")>-1){
             fName = s.substring(0,s.indexOf(" "));
@@ -53,9 +55,10 @@ public class Person
     public void printName(){
         if(!fName.equals("")){
         System.out.print(fName + " ");
-        //if(mName!=""){
+        if(mName!=""){
+        
         System.out.print(mName + " ");
-    //}
+    }
         System.out.print(lName+", ");
         }
         else{

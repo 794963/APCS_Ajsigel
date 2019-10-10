@@ -9,8 +9,8 @@ import java.util.Random;
  * 		Will transform statements as well as react to keywords
  *</li></ul>
  * This version uses an array to hold the default responses.
- * @author Laurie White
- * @version April 2012
+ *  * @author Jaan Sigel
+ * @version Oct 2019 10
  */
 public class Magpie5
 {

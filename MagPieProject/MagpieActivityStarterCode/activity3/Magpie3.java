@@ -5,8 +5,8 @@
  *    Uses advanced search for keywords 
  * </li></ul> 
  *    
- * @author Laurie White
- * @version April 2012
+ *  * @author Jaan Sigel
+ * @version Oct 2019 10
  */
 public class Magpie3
 {

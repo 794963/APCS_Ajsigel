@@ -21,7 +21,7 @@ public class ScannerTest{
         while(!inputStr.equals("quit")){
             System.out.println("Enter a name or type \"quit\" to quit");
             inputStr = kb.nextLine();
-            System.out.println(inputStr);
+            //System.out.println(inputStr);
             
             inputStr = inputStr.trim();
             if(!inputStr.equals("quit")){

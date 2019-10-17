@@ -1,0 +1,17 @@
+#BlueJ class context
+comment0.target=BubbleSort
+comment0.text=\r\n\ BubbleSorting\ here.\r\n\r\n\ @author\ (Jaan\ Sigel)\r\n\ @version\ (1017)\r\n
+comment1.params=
+comment1.target=BubbleSort()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ BubbleSort\r\n
+comment2.params=
+comment2.target=void\ printArray()
+comment3.params=x
+comment3.target=void\ loadArray(int)
+comment4.params=x\ i\ j
+comment4.target=void\ swap(int[],\ int,\ int)
+comment5.params=x
+comment5.target=int[]\ bubbleSort(int[])
+comment6.params=
+comment6.target=void\ main()
+numComments=7

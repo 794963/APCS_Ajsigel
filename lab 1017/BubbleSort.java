@@ -25,7 +25,9 @@ public class BubbleSort
     public void printArray(){
         for(int i = 0; i < nums.length; i++){ 
             System.out.print(nums[i] + ", ");//  print all nums
+            
         }
+        System.out.println();
     }
     public void loadArray(int x){
         nums = new int[x];
@@ -43,10 +45,12 @@ public class BubbleSort
         int z = 0;
         for(int i = 0; i<x.length; i++){
             for(int j=0; j<x.length-minus; j++){
+                if(z!=x.length-2){
                if(x[z]>x[z++]){
                    swap(x,z,z++);
                 }
                 z++;
+            }
             }
             minus++;
             z = 0;

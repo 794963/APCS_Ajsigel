@@ -18,7 +18,7 @@ public class BubbleSort
         // initialise instance variables
         loadArray(10);
         printArray();
-        bubbleSort(nums);
+       nums = bubbleSort(nums);
        printArray();
         
     }
@@ -35,25 +35,20 @@ public class BubbleSort
             nums[i] = (int)(Math.random()*10) + 1;  //  last index = 9
         }
     }
-    public void swap(int[] x , int i, int j){
-        int temp = x[i];
-        x[i]=x[j];
-        x[j]=temp;
-    }
-    public int[] bubbleSort(int[] x){
-        int minus = 0;
-        int z = 0;
-        for(int i = 0; i<x.length; i++){
-            for(int j=0; j<x.length-minus; j++){
-                if(z!=x.length-2){
-               if(x[z]>x[z++]){
-                   swap(x,z,z++);
+    
+    public int[] bubbleSort(int[] z){
+        int [] x = z;
+        for(int i = x.length-1; i>0; i--){
+            for(int j=0; j<i; j++){
+                
+               if(x[j]>x[j+1]){
+                   int temp = x[j];
+        x[j]=x[j+1];
+        x[j+1]=temp;
                 }
-                z++;
+              
             }
-            }
-            minus++;
-            z = 0;
+            
         }
         return x;
     }

@@ -10,7 +10,7 @@ public class SortTester
 {
     // instance variables - replace the enumListample below with your own
     ArrayList<Integer> numList = new ArrayList<Integer>();
-
+    ArrayList<Integer> copy = new ArrayList<Integer>();
     /**
      * Constructor for objects of class SortTester
      */
@@ -18,10 +18,10 @@ public class SortTester
     {
         // initialise instance variables
         loadNumbers(x);
-        //printList();
-       // bubbleSort();
-        //printList();
-    //insertSort();
+        printList();
+       bubbleSort();
+        printList();
+    insertSort();
     printList();
     selectSort();
     printList();
@@ -30,6 +30,7 @@ public class SortTester
     for(int i=0; i<n;i++){
         numList.add((int)(Math.random()*100) + 1);
     }
+    copy=numList;
     }
     public void swap(int i,int j){
         int temp = numList.get(i);
@@ -37,6 +38,7 @@ public class SortTester
                    numList.set(j,temp);
     }
     public void bubbleSort(){
+       numList=copy; 
     for(int i = numList.size()-1; i>0; i--){
             for(int j=0; j<i; j++){
                 
@@ -49,30 +51,31 @@ public class SortTester
         }
     }
     public void insertSort(){
+        numList=copy; 
     for(int i = 1; i<numList.size(); i++){
-            for(int j=i; j>0; j--){
+            
+                int j = i;
                 
-               if(numList.get(j)<numList.get(j-1)){
-                   swap(j,j+1);
+               while((j>0) && (numList.get(j)<numList.get(j-1))){
+                   swap(j,j-1);
+                   j=j-1;
                 }
-              
-            }
             
         }
     }
     public void selectSort(){
-        int x = 0;
-        int y=0;
+        numList=copy; 
+        
         for(int i = 0; i<numList.size(); i++){
-            for(int j=x; j<numList.size()-1; j++){
-                if(j==x)y=j;
-               if(numList.get(y)>numList.get(j+1)){
+            int y=i;
+            for(int j=i; j<numList.size()-1; j++){
+
+               if(numList.get(j)>numList.get(j+1)){
                    y=j+1;
                 }
               
             }
-            swap(x,y);
-            x++;
+            swap(i,y);
         }
     }
     public void printList(){

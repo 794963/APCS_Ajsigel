@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.target=StudList
+comment1.params=
+comment1.target=StudList()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ StudList\r\n
+comment10.params=stuNumber
+comment10.target=void\ printStudent(int)
+comment2.params=fullName
+comment2.target=void\ addStudent(java.lang.String)
+comment3.params=lastName
+comment3.target=void\ deleteStudent(java.lang.String)
+comment4.params=stuNumber
+comment4.target=void\ deleteStudent(int)
+comment5.params=lastName
+comment5.target=void\ editStudentList(java.lang.String)
+comment6.params=stuNumber
+comment6.target=void\ editStudentList(int)
+comment7.params=
+comment7.target=void\ clearList()
+comment8.params=
+comment8.target=void\ printList()
+comment9.params=lastName
+comment9.target=void\ printStudent(java.lang.String)
+numComments=11

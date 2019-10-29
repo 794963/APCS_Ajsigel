@@ -8,26 +8,62 @@
 public class Student
 {
     // instance variables - replace the example below with your own
-    private int x;
 
+    char someChar = ' ';
+     int count = 0;
+     String fName = "",mName= "",lName = "",fullName ="";
+     String str;
+     double gpa=0;
+     int stuNum = 0;
+    
     /**
-     * Constructor for objects of class Student
+     * Constructor for objects of class Person
      */
-    public Student()
+    public Student(String x)
     {
         // initialise instance variables
-        x = 0;
+        str = x;
     }
+    public void parseName(String s){
+        
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) == someChar) {
+                count++;
+            }
+        }
 
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
+        if(s.indexOf(",")>-1 && s.indexOf(" ")>-1){
+            lName = s.substring(0,s.indexOf(","));
+            fName = s.substring(s.indexOf(" ")+1,s.lastIndexOf(" "));
+            if(count != 2){
+                mName = "";
+            }else{
+              mName = s.substring(s.lastIndexOf(" ")+1);
+            }
+        }else if(s.indexOf(" ")>-1){
+            fName = s.substring(0,s.indexOf(" "));
+            if(count != 2){
+                mName = "";
+            }else{
+                mName = s.substring(s.indexOf(" ")+1,s.lastIndexOf(" "));
+            }
+            lName = s.substring(s.lastIndexOf(" ")+1);
+        }
+        fullName= lName +", "+ fName + " " + mName;
+}
+public String getName(){
+    return fullName;
+}
+public void gpaSetter(double x){
+    gpa = x;
+}
+public double gpaGetter(){
+    return gpa;
+}
+public void stuNumSetter(int x){
+stuNum=x;
+}
+public int stuNumGetter(){
+return stuNum;
+}
 }

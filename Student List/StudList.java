@@ -8,8 +8,7 @@
 import java.util.*;
 public class StudList
 {
-    
-
+    int x =0;
     /**
      * Constructor for objects of class StudList
      */
@@ -20,7 +19,9 @@ public class StudList
     }
 
     public void addStudent(String fullName){
-        
+       
+       //Student x
+        x++;
     }
     public void deleteStudent(String lastName){
         

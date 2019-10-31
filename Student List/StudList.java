@@ -1,14 +1,15 @@
 
 /**
- * Write a description of class StudList here.
+ * Write a description of class StringSearcher here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (jaan sigel
+ * @version (1031
  */
 import java.util.*;
 public class StudList
 {
     int x =0;
+    
     /**
      * Constructor for objects of class StudList
      */
@@ -20,8 +21,9 @@ public class StudList
 
     public void addStudent(String fullName){
        
-       //Student x
-        x++;
+       Student s1 = new Student(fullName);
+       System.out.println("Enter the student's gpa (enter with deciamls)");
+       //inputStr = kb.nextLine();
     }
     public void deleteStudent(String lastName){
         

@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class Student here.
+ * Write a description of class StringSearcher here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (jaan sigel
+ * @version (1031
  */
 public class Student
 {
@@ -13,7 +13,7 @@ public class Student
      int count = 0;
      String fName = "",mName= "",lName = "",fullName ="";
      String str;
-     double gpa=0;
+     String gpa="";
      int stuNum = 0;
     
     /**
@@ -54,10 +54,10 @@ public class Student
 public String getName(){
     return fullName;
 }
-public void gpaSetter(double x){
-    gpa = x;
+public void gpaSetter(String z){
+    gpa = z;
 }
-public double gpaGetter(){
+public String gpaGetter(){
     return gpa;
 }
 public void stuNumSetter(int x){

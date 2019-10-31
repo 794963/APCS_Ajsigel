@@ -1,6 +1,6 @@
 #BlueJ class context
 comment0.target=Student
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Student\ here.\r\n\r\n\ @author\ (your\ name)\r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ StringSearcher\ here.\r\n\r\n\ @author\ (jaan\ sigel\r\n\ @version\ (1031\r\n
 comment1.params=x
 comment1.target=Student(java.lang.String)
 comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Person\r\n
@@ -8,10 +8,10 @@ comment2.params=s
 comment2.target=void\ parseName(java.lang.String)
 comment3.params=
 comment3.target=java.lang.String\ getName()
-comment4.params=x
-comment4.target=void\ gpaSetter(double)
+comment4.params=z
+comment4.target=void\ gpaSetter(java.lang.String)
 comment5.params=
-comment5.target=double\ gpaGetter()
+comment5.target=java.lang.String\ gpaGetter()
 comment6.params=x
 comment6.target=void\ stuNumSetter(int)
 comment7.params=

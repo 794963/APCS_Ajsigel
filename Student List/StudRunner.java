@@ -1,15 +1,15 @@
 
 /**
- * Write a description of class StudRunner here.
+ * Write a description of class StringSearcher here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author (jaan sigel
+ * @version (1031
  */
 import java.util.*;
 public class StudRunner
 {
     // instance variables - replace the example below with your own
-    
+    static StudList sL = new StudList();
     public StudRunner()
     {
         // initialise instance variables
@@ -51,7 +51,14 @@ public class StudRunner
             inputStr = inputStr.trim();
             //System.out.println(inputStr);
         
-            if(inputStr.equals("1")){
+        if(inputStr.equals("1")){
+            System.out.println();
+            System.out.println("Enter the student's name");
+            inputStr = kb.nextLine();
+            inputStr = inputStr.toLowerCase();
+            inputStr = inputStr.trim();
+            sL.addStudent(inputStr);
+            
             
         } else if(inputStr.equals("2")){
             

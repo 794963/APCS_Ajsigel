@@ -30,8 +30,10 @@ public class StringSearcher
         inputStr = kb.nextLine();
         inputStr = inputStr.toLowerCase();
         inputStr = inputStr.trim();
+        if(!inputStr.equals("1")){
         str=extendArray(str, 1);
         str[x]=inputStr;
+    }
         x++;
     }
     System.out.println("Enter a keyword to search the list for");

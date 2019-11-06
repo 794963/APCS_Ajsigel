@@ -13,7 +13,7 @@ public class Student
      int count = 0;
      String fName = "",mName= "",lName = "",fullName ="";
      String str;
-     String gpa="";
+     double gpa=0;
      int stuNum = 0;
     
     /**
@@ -54,10 +54,10 @@ public class Student
 public String getName(){
     return fullName;
 }
-public void gpaSetter(String z){
+public void gpaSetter(double z){
     gpa = z;
 }
-public String gpaGetter(){
+public double gpaGetter(){
     return gpa;
 }
 public void stuNumSetter(int x){

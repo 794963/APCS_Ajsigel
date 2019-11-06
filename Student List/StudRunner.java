@@ -61,9 +61,27 @@ public class StudRunner
             
             
         } else if(inputStr.equals("2")){
-            
+            System.out.println();
+            System.out.println("Enter the student's last name you want to delete followed by a period\nOr enter the Student's number");
+            inputStr = kb.nextLine();
+            inputStr = inputStr.toLowerCase();
+            inputStr = inputStr.trim();
+            if(inputStr.indexOf(".")>-1){
+            sL.deleteStudent(inputStr.substring(0,inputStr.length()-1));
+        }else{
+            sL.deleteStudent(Integer.parseInt(inputStr));
+        }
         }else if(inputStr.equals("3")){
-            
+               System.out.println();
+            System.out.println("Enter the student's last name you want to edit followed by a period\nOr enter the Student's number");
+            inputStr = kb.nextLine();
+            inputStr = inputStr.toLowerCase();
+            inputStr = inputStr.trim();
+            if(inputStr.indexOf(".")>-1){
+            sL.deleteStudent(inputStr.substring(0,inputStr.length()-1));
+        }else{
+            sL.deleteStudent(Integer.parseInt(inputStr));
+        }
         }else if(inputStr.equals("4")){
             
         }else if(inputStr.equals("5")){

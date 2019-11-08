@@ -21,17 +21,25 @@ public class StudList
         
     }
 
-    public void addStudent(String fullName){
+    // public void addStudent(String fullName){
        
-       Student s1 = new Student(fullName);
-       System.out.println("Enter the student's gpa (enter with deciamls)");
-       inputStr1 = ks.nextLine();
-       s1.gpaSetter(Double.parseDouble(inputStr1));
-       System.out.println("Enter the student's number");
-       inputStr1 = ks.nextLine();
-       s1.stuNumSetter(Integer.parseInt(inputStr1));
-       studList.add(s1);
-    }
+       // Student s1 = new Student(fullName);
+       // System.out.println("Enter the student's gpa (enter with deciamls)");
+       // inputStr1 = ks.nextLine();
+       // if(inputStr1.indexOf(".")>-1){
+           // if(!checkInt(inputStr1.substring(0,inputStr1.indexOf(".")) && //!checkInt(inputStr1.substring(inputStr1.indexOf(".")+1)))){
+               
+            // //}
+        // }else{
+            // System.out.println("Input Invalid");
+            // retry("Enter the student's gpa (enter with deciamls)");
+        // }
+       // s1.gpaSetter(Double.parseDouble(inputStr1));
+       // System.out.println("Enter the student's number");
+       // inputStr1 = ks.nextLine();
+       // s1.stuNumSetter(Integer.parseInt(inputStr1));
+       // studList.add(s1);
+    // }
     public void deleteStudent(String lastName){
         for(int i=0;i<studList.size();i++){
         if(studList.get(i).lName.equals(lastName)){
@@ -138,4 +146,21 @@ public class StudList
         
         return sk;
     }
+    public void retry(String s){
+        System.out.println(s);
+        inputStr1 = ks.nextLine();
+    }
+    public boolean checkInt(String s) {
+    if (s == null)return false;
+    
+    int len = s.length();
+    for (int i = 0; i < len; i++) {
+        // checks whether the character is not a letter
+        // if it is not a letter ,it will return false
+        if ((Character.isLetter(s.charAt(i)) == true)) {
+            return false;
+        }
+    }
+    return true;
+}
 }

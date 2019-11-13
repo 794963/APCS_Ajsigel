@@ -23,6 +23,7 @@ public class Student
     {
         // initialise instance variables
         str = x;
+        parseName(x);
     }
     public void parseName(String s){
         

@@ -38,10 +38,7 @@ public class StudRunner
                 System.out.println("7. sort student");
                 System.out.println("8. search for students");
 
-                // if(x!=0){
-                // for (int i = 0; i < y; ++i) System.out.println();
-                // }
-                // if(x==0)x++;
+                
 
                 inputStr = kb.nextLine();
                 x++;
@@ -61,12 +58,12 @@ public class StudRunner
 
             } else if(inputStr.equals("2")){
                 System.out.println();
-                System.out.println("Enter the student's last name you want to delete followed by a period\nOr enter the Student's number");
+                System.out.println("Enter the student's last name you want to delete\nOr enter the Student's number");
                 inputStr = kb.nextLine();
                 inputStr = inputStr.toLowerCase();
                 inputStr = inputStr.trim();
-                if(inputStr.indexOf(".")>-1){
-                    sL.deleteStudent(inputStr.substring(0,inputStr.length()-1));
+                if(!checkInt(inputStr)){
+                    sL.deleteStudent(inputStr);
                 }else{
                     if(checkInt(inputStr)){
                     sL.deleteStudent(Integer.parseInt(inputStr));
@@ -76,12 +73,12 @@ public class StudRunner
                 }
             }else if(inputStr.equals("3")){
                 System.out.println();
-                System.out.println("Enter the student's last name you want to edit followed by a period\nOr enter the Student's number");
+                System.out.println("Enter the Student's last name you want to edit\nOr enter the Student's number");
                 inputStr = kb.nextLine();
                 inputStr = inputStr.toLowerCase();
                 inputStr = inputStr.trim();
-                if(inputStr.indexOf(".")>-1){
-                    sL.editStudentList(inputStr.substring(0,inputStr.length()-1));
+                if(!checkInt(inputStr)){
+                    sL.editStudentList(inputStr);
                 }else{
                   if(checkInt(inputStr)){
                     sL.editStudentList(Integer.parseInt(inputStr));
@@ -90,13 +87,35 @@ public class StudRunner
                 }
                 }
             }else if(inputStr.equals("4")){
-
+                sL.clearList();
             }else if(inputStr.equals("5")){
-
+                sL.printList();
             }else if(inputStr.equals("6")){
-
+                System.out.println();
+                System.out.println("Enter the student's last name you want to print\nOr enter the Student's number");
+                inputStr = kb.nextLine();
+                inputStr = inputStr.toLowerCase();
+                inputStr = inputStr.trim();
+                if(!checkInt(inputStr)){
+                    sL.printStudent(inputStr);
+                }else{
+                  if(checkInt(inputStr)){
+                    sL.printStudent(Integer.parseInt(inputStr));
+                }else{
+                    System.out.println("Invalid input");
+                }
+                }
+                
             }else if(inputStr.equals("7")){
-
+                System.out.println();
+                System.out.println("What do you want to sort the students by?");
+                System.out.println("1. Last Name");
+                System.out.println("2. GPA");
+                System.out.println("3. Student Number");
+                inputStr = kb.nextLine();
+                inputStr = inputStr.toLowerCase();
+                inputStr = inputStr.trim();
+                sL.sortStudents(inputStr);
             }else if(inputStr.equals("8")){
 
             }else if(inputStr.equals("help")){
@@ -140,6 +159,7 @@ public class StudRunner
         if ((Character.isLetter(s.charAt(i)) == true)) {
             return false;
         }
+        
     }
     return true;
 }

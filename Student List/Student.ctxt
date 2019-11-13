@@ -16,4 +16,6 @@ comment6.params=x
 comment6.target=void\ stuNumSetter(int)
 comment7.params=
 comment7.target=int\ stuNumGetter()
-numComments=8
+comment8.params=
+comment8.target=java.lang.String\ lGet()
+numComments=9

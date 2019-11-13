@@ -66,4 +66,7 @@ stuNum=x;
 public int stuNumGetter(){
 return stuNum;
 }
+public String lGet(){
+return lName;
+}
 }

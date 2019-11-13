@@ -21,25 +21,26 @@ public class StudList
         
     }
 
-    // public void addStudent(String fullName){
+    public void addStudent(String fullName){
        
-       // Student s1 = new Student(fullName);
-       // System.out.println("Enter the student's gpa (enter with deciamls)");
-       // inputStr1 = ks.nextLine();
-       // if(inputStr1.indexOf(".")>-1){
-           // if(!checkInt(inputStr1.substring(0,inputStr1.indexOf(".")) && //!checkInt(inputStr1.substring(inputStr1.indexOf(".")+1)))){
-               
-            // //}
-        // }else{
-            // System.out.println("Input Invalid");
-            // retry("Enter the student's gpa (enter with deciamls)");
-        // }
-       // s1.gpaSetter(Double.parseDouble(inputStr1));
-       // System.out.println("Enter the student's number");
-       // inputStr1 = ks.nextLine();
-       // s1.stuNumSetter(Integer.parseInt(inputStr1));
-       // studList.add(s1);
-    // }
+       Student s1 = new Student(fullName);
+       System.out.println("Enter the student's gpa (enter with deciamls)");
+       inputStr1 = ks.nextLine();
+       if(inputStr1.indexOf(".")>-1){
+           if(!checkInt(inputStr1.substring(0,inputStr1.indexOf("."))) && !checkInt(inputStr1.substring(inputStr1.indexOf(".")+1))){
+               System.out.println("Input Invalid");
+            retry("Enter the student's gpa (enter with deciamls)");
+            }
+        }else{
+            System.out.println("Input Invalid");
+            retry("Enter the student's gpa (enter with deciamls)");
+        }
+       s1.gpaSetter(Double.parseDouble(inputStr1));
+       System.out.println("Enter the student's number");
+       inputStr1 = ks.nextLine();
+       s1.stuNumSetter(Integer.parseInt(inputStr1));
+       studList.add(s1);
+    }
     public void deleteStudent(String lastName){
         for(int i=0;i<studList.size();i++){
         if(studList.get(i).lName.equals(lastName)){
@@ -121,16 +122,30 @@ public class StudList
         
     }
     public void clearList(){
-    
+    studList.clear();
     }
     public void printList(){
-        
+        System.out.println();
+        for(int i = 0; i < studList.size(); i++){
+        System.out.println("Name: " + studList.get(i).getName() + ", GPA:" + studList.get(i).gpaGetter() + ", Student Number:" + studList.get(i).stuNumGetter() + "; ");
+        }
     }
     public void printStudent(String lastName){
+        System.out.println();
+        for(int i = 0; i < studList.size(); i++){
+        if(studList.get(i).lGet().equals(lastName)){
+        System.out.println("Name: " + studList.get(i).getName() + ", GPA:" + studList.get(i).gpaGetter() + ", Student Number:" + studList.get(i).stuNumGetter() + "; ");
+        }
+        }
         
     }
     public void printStudent(int stuNumber){
-    
+    System.out.println();
+        for(int i = 0; i < studList.size(); i++){
+        if(studList.get(i).stuNumGetter() == stuNumber){
+        System.out.println("Name: " + studList.get(i).getName() + ", GPA:" + studList.get(i).gpaGetter() + ", Student Number:" + studList.get(i).stuNumGetter() + "; ");
+        }
+        }
     }
     public void sortStudents(String lastName){
     

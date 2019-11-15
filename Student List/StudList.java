@@ -209,8 +209,30 @@ public class StudList
     public void help(){
     System.out.println();
     }
-    public ArrayList<Student> filterSearchStudentList(String key){
+    public ArrayList<Student> filterSearchStudentList(String key , String sorter){
         ArrayList<Student> sk = new ArrayList<Student>();
+        if(sorter.equals("1")){
+            for(int i = 0; i < studList.size(); i++){
+        if(studList.get(i).lGet().indexOf(key) > -1){
+        sk.add(studList.get(i));
+        }
+        }
+        }else if(sorter.equals("2")){
+              for(int i = 0; i < studList.size(); i++){
+        if(studList.get(i).gpaGetter() == Double.parseDouble(key)){
+        sk.add(studList.get(i));
+        }
+        }  
+        }else if(sorter.equals("3")){
+                  for(int i = 0; i < studList.size(); i++){
+        if(studList.get(i).stuNumGetter() == Integer.parseInt(key)){
+        sk.add(studList.get(i));
+        }
+        }
+        }else{
+    System.out.println();
+    System.out.println("Input Invalid");
+    }
         
         return sk;
     }

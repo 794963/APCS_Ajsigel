@@ -17,14 +17,16 @@ public class GridTester
     public GridTester()
     {
         // initialise instance variables
+        System.out.println();
         loadArray();
         printArray();
         mat = sort(mat);
+        
         printArray();
         System.out.println("Sum: " + sumAll());
         System.out.println();
         //mode no work yet
-        System.out.println("Greatest Number: " + modeList());
+        printMode();
         System.out.println();
         printArrayList( median(), "Median");
         System.out.println();
@@ -45,16 +47,23 @@ public class GridTester
     }
     return length;
     }
-    public void printMode(ArrayList<Integer> x, String iden){
-        int y =1;
+    public void printMode(){
+        ArrayList<Integer> mode = new ArrayList<Integer>();
+        int same = 0;
         System.out.println();
-        for(int i = 0; i <x.size(); i++){
-        if(x.get(i)!=-1){
-        System.out.print( y +" Array " +iden+ ": " + x.get(i)); 
-    }else{
-    System.out.println();
-    y++;
-    }
+        for(int i = 0; i <mat.length; i++){
+            System.out.print("Mode of Array " +(i+1)+ ": ");
+            
+                same = 0;
+                mode = modeList(mat , i);
+                
+                for(int k=0;k<mode.size();k++){
+                if(same != mode.get(k)){
+                System.out.print(mode.get(k)+", ");
+                same =mode.get(k);
+            }
+                }
+            System.out.println();
         }
     }
     public void printArrayList(ArrayList<Double> x, String iden){
@@ -135,37 +144,37 @@ for(int h =0; h < mat.length; h++){
     }
     return medianList;
     }
-    public ArrayList<Integer> modeList(){
+    public ArrayList<Integer> modeList(int[][] x, int h){
     ArrayList<Integer> mode = new ArrayList<Integer>();
     
-    
-    
     int maxCount = 0;
-    int pTimes = 0; 
-    for(int h =0; h < mat.length; h++){
-        for (int i = 0; i < mat[h].length; ++i) {
+    boolean add = false;
+ 
+        
+        for (int i = 0; i < x[h].length; i++) {
             int count = 0;
-            for (int j = 0; j < mat[h].length; ++j) {
-                if (mat[h][j] == mat[h][i]) ++count;
+            boolean doneOnce= false;
+            for(int j=0; j < x[h].length; j++){
+                if(x[h][i]==x[h][j])count++;
             }
-            if (count >= maxCount && count > 1) {
-                
+            if(count >= maxCount && count > 1){
+                add = true;
                 if(count > maxCount){
-                    mode.clear();
-                    pTimes = 0;
-                    mode.add(mat[h][i]);
-                    pTimes++;
-                }else{
-
-                    mode.add(mat[h][i]);
-                    pTimes++;
-
+                    mode = new ArrayList<Integer>();
+                    mode.add(x[h][i]);
+                    maxCount = count;
+                }else if(count == maxCount){
+                   
+                    mode.add(x[h][i]);
+                
                 }
-                maxCount = count;
             }
         }
-        mode.add(-1);
-    }
+        if(!add){
+            for(int y = 0; y < x[h].length; y++){
+                mode.add(x[h][y]);
+            }
+        }
     return mode;
     }
     

@@ -99,7 +99,201 @@ public class Picture extends SimplePicture
       }
     }
   }
-  
+  public void keepOnlyBlue()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        pixelObj.setRed(0);
+        pixelObj.setGreen(0);
+      }
+    }
+  }
+  public void keepOnlyRed()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        pixelObj.setBlue(0);
+        pixelObj.setGreen(0);
+      }
+    }
+  }
+  public void keepOnlyGreen()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        pixelObj.setBlue(0);
+        pixelObj.setRed(0);
+      }
+    }
+  }
+  public void negate()
+  {
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        pixelObj.setBlue(255-pixelObj.getBlue());
+        pixelObj.setGreen(255-pixelObj.getGreen());
+        pixelObj.setRed(255-pixelObj.getRed());
+      }
+    }
+  }
+  public void grayscale()
+  {
+    
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        int gray=(pixelObj.getBlue()+pixelObj.getGreen()+pixelObj.getRed())/3;
+        pixelObj.setBlue(gray);
+        pixelObj.setGreen(gray);
+        pixelObj.setRed(gray);
+      }
+    }
+  }
+  public void fixUnderwater(){
+      fixRedUnderwater();
+      fixGreenUnderwater();
+      fixBlueUnderwater();
+    }
+  public void fixRedUnderwater()
+  {
+    int range = findMaxRed()-findMinRed();
+    int displacement = 255/range;
+    int red = 0;
+    int min = findMinRed();
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        red = pixelObj.getRed()-min;
+        pixelObj.setRed(red*displacement);
+      }
+    }
+  }
+  public int findMaxRed()
+  {
+    int red = 0;
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        if(pixelObj.getRed()>red)red=pixelObj.getRed();
+      }
+    }
+    return red;
+  }
+  public int findMinRed()
+  {
+    int red = 255;
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        if(pixelObj.getRed()<red)red=pixelObj.getRed();
+      }
+    }
+    return red;
+  }
+  public void fixGreenUnderwater()
+  {
+    int range = findMaxGreen()-findMinGreen();
+    int displacement = 255/range;
+    int green = 0;
+    int min = findMinGreen();
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        green = pixelObj.getGreen()-min;
+        pixelObj.setGreen(green*displacement);
+      }
+    }
+  }
+  public int findMaxGreen()
+  {
+    int red = 0;
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        if(pixelObj.getGreen()>red)red=pixelObj.getGreen();
+      }
+    }
+    return red;
+  }
+  public int findMinGreen()
+  {
+    int red = 255;
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        if(pixelObj.getGreen()<red)red=pixelObj.getGreen();
+      }
+    }
+    return red;
+  }
+  public void fixBlueUnderwater()
+  {
+    int range = findMaxBlue()-findMinBlue();
+    int displacement = 255/range;
+    int blue = 0;
+    int min = findMinGreen();
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        blue = pixelObj.getGreen()-min;
+        pixelObj.setBlue(blue*displacement);
+      }
+    }
+  }
+  public int findMaxBlue()
+  {
+    int red = 0;
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        if(pixelObj.getBlue()>red)red=pixelObj.getBlue();
+      }
+    }
+    return red;
+  }
+  public int findMinBlue()
+  {
+    int red = 255;
+    Pixel[][] pixels = this.getPixels2D();
+    for (Pixel[] rowArray : pixels)
+    {
+      for (Pixel pixelObj : rowArray)
+      {
+        if(pixelObj.getBlue()<red)red=pixelObj.getBlue();
+      }
+    }
+    return red;
+  }
   /** Method that mirrors the picture around a 
     * vertical mirror in the center of the picture
     * from left to right */

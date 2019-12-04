@@ -171,7 +171,7 @@ public class Picture extends SimplePicture
   public void fixRedUnderwater()
   {
     int range = findMaxRed()-findMinRed();
-    int displacement = 255/range;
+    double displacement = 255/range;
     int red = 0;
     int min = findMinRed();
     Pixel[][] pixels = this.getPixels2D();
@@ -180,7 +180,7 @@ public class Picture extends SimplePicture
       for (Pixel pixelObj : rowArray)
       {
         red = pixelObj.getRed()-min;
-        pixelObj.setRed(red*displacement);
+        pixelObj.setRed((int)(red*displacement));
       }
     }
   }
@@ -213,7 +213,7 @@ public class Picture extends SimplePicture
   public void fixGreenUnderwater()
   {
     int range = findMaxGreen()-findMinGreen();
-    int displacement = 255/range;
+    double displacement = 255/range;
     int green = 0;
     int min = findMinGreen();
     Pixel[][] pixels = this.getPixels2D();
@@ -222,7 +222,7 @@ public class Picture extends SimplePicture
       for (Pixel pixelObj : rowArray)
       {
         green = pixelObj.getGreen()-min;
-        pixelObj.setGreen(green*displacement);
+        pixelObj.setGreen((int)(green*displacement));
       }
     }
   }
@@ -255,7 +255,7 @@ public class Picture extends SimplePicture
   public void fixBlueUnderwater()
   {
     int range = findMaxBlue()-findMinBlue();
-    int displacement = 255/range;
+    double displacement = 255/range;
     int blue = 0;
     int min = findMinGreen();
     Pixel[][] pixels = this.getPixels2D();
@@ -264,7 +264,7 @@ public class Picture extends SimplePicture
       for (Pixel pixelObj : rowArray)
       {
         blue = pixelObj.getGreen()-min;
-        pixelObj.setBlue(blue*displacement);
+        pixelObj.setBlue((int)(blue*displacement));
       }
     }
   }

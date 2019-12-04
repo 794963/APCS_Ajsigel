@@ -54,7 +54,11 @@ public class IntArrayWorkerTester
     int total = worker.getTotalNested();
     System.out.println("Total should be 21 and is " + total);
   }
-  
+  public static void testMirrorVertical(){
+    IntArrayWorker worker = new IntArrayWorker();
+    worker.flipVertical();
+    
+    }
   /** Method to test getLargest */
   public static void testGetLargest()
  { // test when largest is last
@@ -103,5 +107,6 @@ public class IntArrayWorkerTester
     testGetTotalNested();
     testGetLargest();
     testGetColTotal();
+    testMirrorVertical();
   }
 }

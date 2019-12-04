@@ -4,6 +4,7 @@ public class IntArrayWorker
 {
   /** two dimensional matrix */
   private int[][] matrix = null;
+  private int[][] evenOdd = new int[10][10];
   
   /** set the matrix to the passed one
     * @param theMatrix the one to use
@@ -110,6 +111,52 @@ public class IntArrayWorker
     }
     return times;
  }
+ public void loadEvensOdds(){
+     int rand = 0;
+     for(int i=0; i<evenOdd.length;i++){
+        for(int j=0; j<evenOdd.length;j++){
+            rand = (int)Math.random()*10+1;
+            if(j<evenOdd.length/2){
+                if(rand%2==0){
+                    evenOdd[i][j]=rand;
+                }else{
+                    evenOdd[i][j]=rand+1;
+                }
+            }else{
+                if(rand%2==1){
+                    evenOdd[i][j]=rand;
+                }else{
+                    evenOdd[i][j]=rand+1;
+                }
+            }
+        }
+        }
+    }
+ public void printArr(){
+     System.out.println();
+     for(int i=0; i<evenOdd.length;i++){
+        for(int j=0; j<evenOdd.length;j++){
+            System.out.print(evenOdd[i][j] + " ");
+        }
+        System.out.println();
+        }
+     System.out.println();
+    }
+ public void flipVertical(){
+     loadEvensOdds();
+     printArr();
+     for(int i=0; i<evenOdd.length;i++){
+        for(int j=0; j<evenOdd.length/2;j++){
+            swap(evenOdd,i,j,evenOdd.length-1-j);
+        }
+        }
+     printArr();
+ }
+ public void swap(int[][] a, int r, int i1, int i2){
+     int temp=a[r][i1];
+     a[r][i1]=a[r][i2];
+     a[r][i2]=temp;
+    }
  public  int getLargest()
  { // test when largest is last
    int most = 0;

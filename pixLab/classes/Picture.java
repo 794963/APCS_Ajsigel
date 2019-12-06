@@ -172,15 +172,16 @@ public class Picture extends SimplePicture
   {
     int range = findMaxRed()-findMinRed();
     double displacement = 255/range;
-    int red = 0;
+    double red = 0;
     int min = findMinRed();
     Pixel[][] pixels = this.getPixels2D();
     for (Pixel[] rowArray : pixels)
     {
       for (Pixel pixelObj : rowArray)
       {
-        red = pixelObj.getRed()-min;
-        pixelObj.setRed((int)(red*displacement));
+        red = (pixelObj.getRed()-min)*255;
+        double color = red/range;
+        pixelObj.setRed((int)(color));
       }
     }
   }
@@ -214,15 +215,16 @@ public class Picture extends SimplePicture
   {
     int range = findMaxGreen()-findMinGreen();
     double displacement = 255/range;
-    int green = 0;
+    double green = 0;
     int min = findMinGreen();
     Pixel[][] pixels = this.getPixels2D();
     for (Pixel[] rowArray : pixels)
     {
       for (Pixel pixelObj : rowArray)
       {
-        green = pixelObj.getGreen()-min;
-        pixelObj.setGreen((int)(green*displacement));
+        green = (pixelObj.getGreen()-min)*255;
+        double color = green/range;
+        pixelObj.setGreen((int)(color));
       }
     }
   }
@@ -256,15 +258,16 @@ public class Picture extends SimplePicture
   {
     int range = findMaxBlue()-findMinBlue();
     double displacement = 255/range;
-    int blue = 0;
+    double blue = 0;
     int min = findMinGreen();
     Pixel[][] pixels = this.getPixels2D();
     for (Pixel[] rowArray : pixels)
     {
       for (Pixel pixelObj : rowArray)
       {
-        blue = pixelObj.getGreen()-min;
-        pixelObj.setBlue((int)(blue*displacement));
+        blue = (pixelObj.getGreen()-min)*255;
+        double color = blue/range;
+        pixelObj.setBlue((int)(color));
       }
     }
   }
@@ -378,6 +381,29 @@ public class Picture extends SimplePicture
       // loop from 13 to just before the mirror point
       for (int col = 13; col < mirrorPoint; col++)
       {
+        count++;
+        leftPixel = pixels[row][col];      
+        rightPixel = pixels[row]                       
+                         [mirrorPoint - col + mirrorPoint];
+        rightPixel.setColor(leftPixel.getColor());
+      }
+    }
+    System.out.println(count);
+  }
+  public void mirrorArms()
+  {
+    int mirrorPoint = 276;
+    Pixel leftPixel = null;
+    Pixel rightPixel = null;
+    int count = 0;
+    Pixel[][] pixels = this.getPixels2D();
+    
+    // loop through the rows
+    for (int row = 27; row < 97; row++)
+    {
+      // loop from 13 to just before the mirror point
+      for (int col = 13; col < mirrorPoint; col++)
+      {
         
         leftPixel = pixels[row][col];      
         rightPixel = pixels[row]                       
@@ -385,8 +411,8 @@ public class Picture extends SimplePicture
         rightPixel.setColor(leftPixel.getColor());
       }
     }
+    
   }
-  
   /** copy from the passed fromPic to the
     * specified startRow and startCol in the
     * current picture

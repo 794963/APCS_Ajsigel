@@ -1,9 +1,0 @@
-#BlueJ class context
-comment0.target=ShapeWorldRunner
-comment0.text=\r\n\ Shape\ Runner\r\n\r\n\ @author\ (Jaan\ Sigel)\r\n\ @version\ (827)\r\n
-comment1.params=
-comment1.target=ShapeWorldRunner()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ ShapeWorldRunner\r\n
-comment2.params=
-comment2.target=void\ main()
-numComments=3

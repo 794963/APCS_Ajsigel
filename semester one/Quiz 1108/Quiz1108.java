@@ -8,11 +8,15 @@
 import java.util.*;
 public class Quiz1108{
     public Quiz1108(){
-        int[] x = {1, 2, 3, 4, 5};
-        ArrayList<Integer> n1 = makeList(x);
-        int[] y = reverseList(n1);
-        printList(n1);
-        printArray(y);
+        // int[] x = {1, 2, 3, 4, 5};
+        // ArrayList<Integer> n1 = makeList(x);
+        // int[] y = reverseList(n1);
+        // printList(n1);
+        // printArray(y);
+         String str1 = "Jobs, Steven Paul";
+      String str2 = "Steven Paul Jobs";
+
+        System.out.print(str2.substring(str1.indexOf("Paul"),str1.indexOf("Jobs")-2));
     }
  
     public ArrayList<Integer> makeList(int[] nums){ 

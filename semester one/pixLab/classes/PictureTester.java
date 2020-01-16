@@ -129,8 +129,8 @@ public class PictureTester
   /** Method to test edgeDetection */
   public static void testEdgeDetection()
   {
-    Picture swan = new Picture("swan.jpg");
-    swan.edgeDetectionBoth(30);
+    Picture swan = new Picture("IMG_0112.jpg");
+    swan.edgeDetectionBoth(15);
     swan.explore();
   }
   public static void testEdgeDetection2()
